@@ -1,10 +1,9 @@
-import React from 'react'
-
+import React from "react";
+import { useParams } from "react-router-dom";
 const SingleProject = () => {
-  
-  return (
-    <div>SingleProject</div>
-  )
-}
+  // const { projectId } = useParams();
+  // console.log(projectId)
+  return <div>SingleProject</div>;
+};
 
-export default SingleProject
+export default SingleProject;
