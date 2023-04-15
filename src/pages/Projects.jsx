@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Projects = () => {
-  return (
-    <div>
-      Portfolio / Projects: A showcase of your most significant web development
-      projects. Include a brief description, images, and links to live websites
-      or GitHub repositories for each project. You may want to categorize them
-      by type e.g., front - end, back - end, full - stack or industry e.g.,
-      e-commerce, education, non-profit.
-    </div>
-  );
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/data")
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+  return <div>data from the backend: {data}</div>;
 };
 
 export default Projects;
